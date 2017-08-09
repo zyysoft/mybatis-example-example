@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="OFF">
+	<appenders>
+		<Console name="Console" target="SYSTEM_OUT">
+			<!-- <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level [%L] %logger{36} 
+				- %msg%n"/> -->
+			<PatternLayout
+				pattern="%d{dd MMM yyyy HH:mm:ss,SSS} %-5p [%t] (%C.%M:%L) - %m%n" />
+		</Console>
+	</appenders>
+	<loggers>
+		<logger name="log4j.logger.com.ibatis" level="info" additivity="false">
+	      <appender-ref ref="Console"/>
+	    </logger>
+		<logger name="log4j.logger.org.mybatis" level="info"
+			additivity="false">
+			<appender-ref ref="Console" />
+		</logger>
+		<logger name="log4j.logger.java.sql" level="trace" additivity="false">
+			<appender-ref ref="Console" />
+		</logger>
+		<logger name="log4j.logger.java.sql.Connection" level="trace"
+			additivity="false">
+			<appender-ref ref="Console" />
+		</logger>
+		<logger name="log4j.logger.java.sql.Statement" level="info"
+			additivity="false">
+			<appender-ref ref="Console" />
+		</logger>
+		<logger name="log4j.logger.java.sql.PreparedStatement" level="info"
+			additivity="false">
+			<appender-ref ref="Console" />
+		</logger>
+		<logger name="log4j.logger.java.sql.ResultSet" level="trace"
+			additivity="false">
+			<appender-ref ref="Console" />
+		</logger>
+		<logger name="log4j.logger.druid.sql.Statement" level="info">
+			<appender-ref>Console</appender-ref>
+		</logger>
+		<root level="debug">
+			<appender-ref ref="Console" />
+		</root>
+	</loggers>
+</configuration> 
